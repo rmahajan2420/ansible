@@ -1,0 +1,213 @@
+    1  mkdir playbooks
+    2  chown test:test playbooks
+    3  who
+    4  pwd
+    5  ssh-keyge
+    6  ssh-keygen
+    7  ssh-copy-id54.174.5.169
+    8  ssh-copy-id 54.174.5.169
+    9  ssh  54.174.5.169
+   10  ssh-copy-id 52.90.17.15
+   11  ssh 52.90.17.15
+   12  ssh odecee2
+   13  ssh odecee3
+   14  exit
+   15  ssh 52.90.17.15
+   16  exit
+   17  nhistory
+   18  history
+   19  cd /etc/ansible/
+   20  ks 0k
+   21  ls -l
+   22  cat hosts 
+   23  vim ansible.cfg 
+   24  ssh-copy-id 54.174.5.169
+   25  su -
+   26  clear
+   27  cd /etc/ansible/
+   28  ls -l
+   29  vim hosts 
+   30  sudo mv hosts hosts.orig
+   31  vim /etc/group
+   32  cd /etc/ansible/
+   33  ls -l
+   34  mv hosts hosts.orig
+   35  sudo mv hosts hosts.orig
+   36  ls -l
+   37  vim hosts
+   38  sudo vim hosts
+   39  ll
+   40  cat hosts
+   41  vim hosts
+   42  sudo vim hosts
+   43  sudo vim ansible.cfg 
+   44  clear
+   45  ansible all --list-hosts
+   46  pwd
+   47  ansible all --list-hosts
+   48  clear
+   49  sudo ansible all --list-hosts
+   50  cat /etc/ansible/hosts
+   51  ansible apacheweb -m ping
+   52  sudo ansible apacheweb -m ping
+   53  vim /etc/ansible/hosts
+   54  sudo vim /etc/ansible/hosts
+   55  sudo ansible apacheweb -m ping
+   56  sudo vim /etc/ansible/hosts
+   57  ssh odecee
+   58  ssh odecee2
+   59  ansible apacheweb -m ping
+   60  vim /etc/ansible/ansible.cfg 
+   61  sudo vim /etc/ansible/ansible.cfg 
+   62  ansible apacheweb -m ping
+   63  ansible apacheweb -m ping
+   64  ansible apacheweb -m ping
+   65  sudo ansible all --list-hosts
+   66  ansible all --list-hosts
+   67  cd /var/log/
+   68  ls -l
+   69  touch ansible.log
+   70  sudo touch ansible.log
+   71  ls -lart
+   72  chown test:test ansible.log
+   73  sudo chown test:test ansible.log
+   74  ansible all --list-hosts
+   75  ansible apacheweb -m ping
+   76  sudo vim /etc/ansible/ansible.cfg 
+   77  ansible apacheweb -m ping
+   78  su - root
+   79  visudo
+   80  sudo visudo
+   81  history 
+   82  ansible acacheweb -m ping
+   83  ansible apacheweb -m ping
+   84  ls-l
+   85  ls -l
+   86  cp /etc/ansible/hosts .
+   87  vim hosts 
+   88  ansible odecee3 -i hosts -m ping
+   89  ansible appserver -m ping
+   90  mkdir test
+   91  ansible all --list-hosts
+   92  ll
+   93  ll test/
+   94  ll test
+   95  ansible all -m ping
+   96  ssh-copy-id 52.90.53.75
+   97  ansible all -m ping
+   98  vim hosts 
+   99  ansible apacheweb -m ping
+  100  ansible apacheweb -i hosts -m ping
+  101  cp /etc/ansible/ansible.cfg .
+  102  ls -l
+  103  vim ansible.cfg 
+  104  ansible apacheweb -m ping
+  105  cd test/
+  106  ls -l
+  107  cd
+  108  mv ansible.cfg test/
+  109  mv hosts test/
+  110  cd test/
+  111  ls -l
+  112  mv ansible.cfg test/
+  113  ansible apacheweb -m ping
+  114  mkdir config
+  115  mv ansible.cfg config/
+  116  ls -l
+  117  ansible apacheweb -m ping
+  118  cd config/
+  119  vim ansible.cfg 
+  120  ansible apacheweb -m ping
+  121  ls -l
+  122  vim ansible.cfg 
+  123  pwd
+  124  ls -l ../
+  125  cd ../
+  126  ls -l
+  127  pwd
+  128  ansible apacheweb -m ping
+  129  export ANSIBLE_CONFIG=/home/test/test/config/ansible.cfg
+  130  set | grep ANSIBLE
+  131  ansible apacheweb -m ping
+  132  ls --l
+  133  ls -l
+  134  unset ANSIBLE_CONFIG
+  135  set | grep ANSIBLE_CONFIG
+  136  ls -l
+  137  ansible apacheweb -m ping
+  138  cp config/ansible.cfg .
+  139  ls -l
+  140  ansible apacheweb -m ping
+  141  ls -l
+  142  mv ansible.cfg ~/.ansible.cfg
+  143  ansible apacheweb -m ping
+  144  cat ~/.ansible.cfg
+  145  rm -rf ~/.ansible.cfg
+  146  ls -l
+  147  ls config/
+  148  rm -rf config/ansible.cfg 
+  149  ansible apacheweb -m ping
+  150  cd ../
+  151  ls -lart
+  152  cd playbooks/
+  153  ls -l
+  154  locate playbooks
+  155  ls -l /etc/ansible/roles/
+  156  vim /etc/ansible/ansible.cfg 
+  157  ansible local -m setup
+  158  cat /etc/ansible/hosts
+  159  ansible all -m setup
+  160  ansible all -m setup -a 'filter=ans*ipv4*'
+  161  ansible all -m setup -a 'filter=ans*ipv4*' 
+  162  ansible all -m setup -a 'filter=ans*nodename*'' 
+  163  ansible all -m setup -a 'filter=ans*nodename*'
+  164  ansible all --list-hosts
+  165  ansible all -m ping
+  166  ansible apacheweb -s -m shell -a 'yum -y install lynx'
+  167  ansible apacheweb -s -m yum -a 'pkg=telnet state=installed update_cache=true'
+  168  ansible --help
+  169  ansible
+  170  man ansible
+  171  ansible --version
+  172  ansible local -m setup
+  173  rpm -qa ansible
+  174  rpm --help
+  175  rpm --info ansible
+  176  rpm -ac ansible
+  177  rpm -qa ansible
+  178  rpm -acansible-1.9.4-1.el7.noarch
+  179  rpm -ac ansible-1.9.4-1.el7.noarch
+  180  rpm -qc ansible
+  181  vim /etc/ansible/ansible.cfg 
+  182  sudo vim /etc/ansible/ansible.cfg 
+  183  ansible local -m poing
+  184  ansible local -m ping
+  185  ansibleall  -m ping
+  186  ansible all  -m ping
+  187  ansible all --list-hosts
+  188  ansible apacheweb --list-hosts
+  189  ansible all -m ping 
+  190  ansible apacheweb -s -m shell -a 'yum list installed | grep python'
+  191  clear
+  192  ansible all -s -m shell -a 'yum install telnet'
+  193  ansible all -s -m shell -a 'yum install -y telnet'
+  194  ansible all -s -m shell -a 'yum install -y lynx'
+  195  ansible  apacheweb -s -m shell -a 'cat /var/log/mymessages.log.out'
+  196  ansible  apacheweb -s -m shell -a 'cat /var/log/messages''
+  197  ansible  apacheweb -s -m shell -a 'cat /var/log/messages'
+  198  ansible --help
+  199  ansible all -m ping
+  200  history
+  201  ansible local -m setup
+  202  ansible local -m setup | more
+  203     cd /tmp/
+  204  ls -l
+  205  ansible local -m setup -- tree /tmp/facts
+  206  ansible local -m setup --tree /tmp/facts
+  207  l,s -l
+  208  ls -l
+  209  ls -l facts/
+  210  ls -l facts/localhost 
+  211  vim facts/localhost 
+  212  history
+  213  history > /tmp/ansible-commands

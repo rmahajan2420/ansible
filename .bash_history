@@ -576,3 +576,8 @@ ls -lart
 git add -ALL
 git add -A
 git commit -m "Ansible playbooks" -a"
+git commit -m "Ansible playbooks" -a
+git push
+cp /tmp/ansible-commands 
+cp /tmp/ansible-commands .
+git add -A
