@@ -12,9 +12,9 @@
 
 # Command Line History (newest to oldest):
 :wq
-:Wq
 :q
 :w
+:Wq
 :q!
 :wq!
 :1
@@ -59,21 +59,41 @@
 "9	LINE	0
 	  
 ""-	CHAR	0
-	Lynx
+	=
 
 # File marks:
-'0  1  21  ~/playbooks/plays/packages.yml
-'1  10  66  ~/playbooks/include.yml
-'2  17  0  ~/playbooks/prompt.yml
-'3  1  5  /tmp/tmpE12Phc
-'4  1  15  /tmp/tmpr2k2kA
-'5  4  18  ~/playbooks/accounts.yml
-'6  23  6  ~/playbooks/myfirstplaybookhandler.yml
-'7  17  6  ~/playbooks/myfirstplaybookhandler.yml
-'8  10  4  ~/playbooks/until.yml
-'9  13  6  ~/playbooks/until.yml
+'0  4  2  ~/include/packages/packages.yml
+'1  5  0  ~/include/packages/packages.yml
+'2  2  15  ~/include/handler/handler.yml
+'3  11  2  ~/include/webstuff.yml
+'4  2  26  ~/include/commands/commands.yml
+'5  1  0  ~/include/commands/commands.yml
+'6  6  2  ~/include/packages/packages.yml
+'7  2  11  ~/include/packages/packages.yml
+'8  1  0  ~/include/variables/variables.yml
+'9  12  12  ~/include/webstuff.yml
 
 # Jumplist (newest first):
+-'  4  2  ~/include/packages/packages.yml
+-'  5  2  ~/include/packages/packages.yml
+-'  6  0  ~/include/packages/packages.yml
+-'  2  15  ~/include/handler/handler.yml
+-'  11  2  ~/include/webstuff.yml
+-'  2  26  ~/include/commands/commands.yml
+-'  1  0  ~/include/commands/commands.yml
+-'  2  2  ~/include/packages/packages.yml
+-'  12  4  ~/include/webstuff.yml
+-'  1  0  ~/include/variables/variables.yml
+-'  13  4  ~/include/webstuff.yml
+-'  1  0  ~/include/webstuff.yml
+-'  7  2  ~/include/packages/packages.yml
+-'  1  0  ~/include/handler/handler.yml
+-'  1  0  ~/include/packages/packages.yml
+-'  10  17  ~/playbooks/failure.yml
+-'  8  4  ~/playbooks/failure.yml
+-'  1  0  ~/playbooks/failure.yml
+-'  18  21  ~/playbooks/tags.yml
+-'  1  0  ~/playbooks/tags.yml
 -'  1  21  ~/playbooks/plays/packages.yml
 -'  10  66  ~/playbooks/include.yml
 -'  1  0  ~/playbooks/include.yml
@@ -151,29 +171,71 @@
 -'  3  0  ~/playbooks/conf/copyright.yml
 -'  6  2  ~/playbooks/myfirstplaybook.yml
 -'  1  0  ~/playbooks/myfirstplaybook.yml
--'  2  2  ~/playbooks/appserver.yml
--'  213  2  /tmp/ansible-commands
--'  1  4  /tmp/ansible-commands
--'  4  2  ~/playbooks/appserver.yml
--'  4  0  ~/playbooks/var.yml
--'  1  0  ~/playbooks/var.yml
--'  1  0  ~/playbooks/appserver.yml
--'  1  0  /tmp/facts/localhost
--'  20  0  /etc/ansible/ansible.cfg
--'  37  0  /etc/ansible/ansible.cfg
--'  14  0  ~/test/config/ansible.cfg
--'  1  0  ~/test/config/ansible.cfg
--'  14  17  ~/ansible.cfg
--'  1  0  ~/ansible.cfg
--'  5  17  ~/hosts
--'  2  0  ~/hosts
--'  1  0  ~/hosts
--'  57  0  /etc/ansible/ansible.cfg
--'  5  7  /etc/ansible/hosts
--'  3  0  /etc/ansible/hosts
--'  8  0  /etc/ansible/hosts
 
 # History of marks within files (newest to oldest):
+
+> ~/include/packages/packages.yml
+	"	4	2
+	^	4	47
+	.	4	46
+	+	2	33
+	+	1	1
+	+	7	27
+	+	5	22
+	+	2	11
+	+	4	46
+
+> ~/include/handler/handler.yml
+	"	2	15
+	^	2	16
+	.	2	16
+	+	2	16
+
+> ~/include/webstuff.yml
+	"	11	2
+	^	12	13
+	.	13	2
+	+	5	17
+	+	9	3
+	+	7	11
+	+	8	6
+	+	13	33
+	+	11	32
+	+	12	12
+	+	10	2
+	+	11	2
+	+	12	2
+	+	13	2
+
+> ~/include/commands/commands.yml
+	"	2	26
+	^	2	41
+	.	2	41
+	+	2	61
+	+	1	45
+	+	2	41
+
+> ~/include/variables/variables.yml
+	"	1	0
+	^	1	16
+	.	1	0
+	+	1	0
+
+> ~/playbooks/failure.yml
+	"	10	17
+	^	10	18
+	.	10	17
+	+	12	31
+	+	8	30
+	+	10	17
+
+> ~/playbooks/tags.yml
+	"	18	21
+	^	18	22
+	.	18	21
+	+	8	48
+	+	12	14
+	+	18	21
 
 > ~/playbooks/plays/packages.yml
 	"	1	21
@@ -349,64 +411,3 @@
 	+	11	29
 	+	9	8
 	+	11	8
-
-> ~/playbooks/lookup.yml
-	"	8	124
-	^	8	125
-	.	8	124
-	+	8	124
-
-> ~/playbooks/lookup.csv
-	"	4	28
-	^	4	29
-	.	4	28
-	+	5	31
-	+	4	28
-
-> ~/playbooks/conf/webdefaults.yml
-	"	4	13
-	^	4	14
-	.	4	14
-	+	4	14
-
-> ~/playbooks/myfirstplaybookpoll.yml
-	"	19	12
-	^	19	13
-	.	19	12
-	+	2	11
-	+	19	12
-
-> ~/playbooks/myfirstplaybook.yml
-	"	2	9
-	^	19	10
-	.	21	27
-	+	6	17
-	+	11	23
-	+	12	0
-	+	9	11
-	+	15	4
-	+	13	15
-	+	14	13
-	+	15	5
-	+	10	5
-	+	11	5
-	+	17	3
-	+	16	5
-	+	19	41
-	+	16	35
-	+	17	27
-	+	16	25
-	+	18	26
-	+	21	48
-	+	22	0
-	+	20	24
-	+	19	9
-	+	17	43
-	+	19	0
-	+	21	27
-
-> ~/playbooks/myfirstplaybook.yml-orig
-	"	17	6
-
-> ~/outline/webserver.yml-orig
-	"	10	4

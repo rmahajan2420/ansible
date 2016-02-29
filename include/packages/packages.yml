@@ -1,0 +1,7 @@
+- name: Install Apache Web Server
+  yum: pkg=httpd state=installed
+- name: ensure the httpd is started
+  service: name=httpd state=started enabled=yes
+  notify: Restart HTTPD
+- name: Install The Lynx Web Browser
+  yum: pkg=lynx state=latest

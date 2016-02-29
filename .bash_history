@@ -581,3 +581,102 @@ git push
 cp /tmp/ansible-commands 
 cp /tmp/ansible-commands .
 git add -A
+git commit -m "Ansible commands" -a
+git push
+cd playbooks/
+ls -l
+ssssssssssssssssssssassnssssissssssssssssssssssssssssssssssssssscleasr
+clear
+ansible all --list-hosts
+ls -l
+clear
+vim tags.yml
+ansible-playbook tags.yml 
+cact tags.yml 
+cat tags.yml 
+clear
+ansible-playbook tags.yml --tags "verification"
+ansible-playbook tags.yml --tags "packages""
+ansible-playbook tags.yml --tags "packages"
+ansible-playbook tags.yml --skip-tags "packages""
+ansible-playbook tags.yml --skip-tags "packages"
+history
+history > /tmp/ansible-commands
+ls -l /tmp/
+clear
+cat whencondition.yml 
+clear
+ls -l
+ls -l plays/
+vim failure.yml
+ansible-playbook failure.yml 
+/bin/false
+false
+celar
+clear
+vim failure.yml 
+ansible-playbook failure.yml 
+vim failure.yml 
+ansible-playbook failure.yml 
+cd ../
+mkdir include
+cd include/
+ls -l
+mkdir packages
+mkdir commands
+mkdir variables
+clear
+ls -l
+mkdir handler
+clear
+ll
+ls -l
+cd packages/
+ls -l
+vim packages.yml
+cd ../
+ls -l
+cd variables/
+vim variables.yml
+cd ../
+ls -l
+cd commands/
+vim commands.yml
+cd ../handler/
+vim handler.yml
+cd ../packages/
+ls -l
+vim packages.yml 
+cd ../handler/
+vim handler.yml 
+cd ../
+vim webstuff.yml
+ls- l
+ls -l
+vim webstuff.yml 
+ansible-playbook webstuff.yml 
+vim variables/variables.yml 
+vim webstuff.yml 
+vim variables/variables.yml 
+ansible-playbook webstuff.yml 
+vim variables/variables.yml 
+vim webstuff.yml 
+ansible-playbook webstuff.yml 
+vim packages/packages.yml 
+ansible-playbook webstuff.yml 
+vim packages/packages.yml 
+vim commands/commands.yml 
+vim handler/handler.yml 
+ansible-playbook webstuff.yml 
+vim commands/commands.yml 
+ansible-playbook webstuff.yml 
+vim webstuff.yml 
+vim handler/handler.yml 
+ansible-playbook webstuff.yml 
+vim packages/packages.yml 
+grep "Restart HTTPD" handler/handler.yml
+vim packages/packages.yml 
+ansible-playbook webstuff.yml 
+cd ../
+ls -lart
+git add -A
