@@ -1,0 +1,4 @@
+vars:
+    control_server: odecee1
+    web_root: /var/www/html
+

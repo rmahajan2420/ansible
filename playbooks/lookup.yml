@@ -1,0 +1,8 @@
+--- # LookUP Play Example
+- hosts: apacheweb
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - debug: msg="Lookup the SuperHero for BRUCE WAYNE {{ lookup('csvfile','Bruce Wayne file=lookup.csv delimiter=, default=NOMATCH') }}"
