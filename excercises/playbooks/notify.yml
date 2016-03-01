@@ -1,0 +1,15 @@
+--- # NOTIFY PLAYBOOK EXAMPLE
+- hosts: apacheweb
+  user: test
+  sudo: yes
+  gather_facts: no
+  connection: ssh 
+  vars_files:
+    - conf/webdefaults.yml
+  tasks:
+    - name: Install Apache web server
+      action: yum name=httpd-{{apache_version }} state=installed
+      notify: Restart HTTPD
+  handlers:
+     - name: Restart HTTPD
+       action: service name=httpd state=restarted

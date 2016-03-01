@@ -1,0 +1,15 @@
+--- # LOCAL ACTION PLAYBOOK EXAMPLE
+- hosts: 127.0.0.1
+  user: test
+  sudo: yes
+  gather_facts: no
+  connection: local 
+  vars_files:
+    - conf/webdefaults.yml
+  tasks:
+    - name: Install Apache web server
+      action: yum name=httpd-{{apache_version }} state=installed
+      notify: Restart HTTPD
+  handlers:
+     - name: Restart HTTPD
+       action: service name=httpd state=restarted

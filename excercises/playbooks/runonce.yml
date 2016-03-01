@@ -1,0 +1,14 @@
+--- # RUNOCE COMMAND PLAYBOOK EXAMPLE -- It will run the command once on on the first host server
+- hosts: all
+  user: test
+  sudo: yes
+  gather_facts: no
+  connection: ssh 
+  vars_files:
+    - conf/webdefaults.yml
+  tasks:
+    - name: Run the uptime command and log it
+      raw: /usr/bin/uptime > /home/test/uptime.log
+    - name: List the the /var directory and store the result in dir.list
+      raw: ls -l /var > /home/test/dir.list
+      run_once: true

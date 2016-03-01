@@ -1,0 +1,22 @@
+--- # 2ND LInux Acadmy Excercise
+- hosts: apacheweb
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Install Lynx Package
+    yum: pkg=lynx state=latest
+  - name: Verify if telnet is installed
+    yum: pkg=telnet state=present update_cache=true
+
+- hosts: appserver
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Install telnet Package on App servers
+    yum: pkg=lynx state=latest
+  - name: Verify if lynx is installed
+    yum: pkg=lynx state=present update_cache=true

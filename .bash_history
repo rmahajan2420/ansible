@@ -680,3 +680,236 @@ ansible-playbook webstuff.yml
 cd ../
 ls -lart
 git add -A
+git commit -m "Ansible commands" -a
+git push
+sl -l
+ls -l
+clear
+cd playbooks/
+ls -l
+vim startat.yml
+ansible-playbook startat.yml 
+vim startat.yml 
+ansible-playbook startat.yml --start-at-task='Install Lynx
+ansible-playbook startat.yml --start-at-task='Install Lynx'
+ansible-playbook startat.yml --start-at-task='Instralll Lynx'
+celar
+clear
+vim fromcommandline.yml
+ansible-playbook fromcommandline.yml 
+ansible-playbook fromcommandline.yml  --extra-vars "hosts=apacheweb user=test pkg=telnet"
+vim fromcommandline.yml
+ansible-playbook fromcommandline.yml  --extra-vars "hosts=apacheweb user=test pkg=telnet"
+vim fromcommandline.yml
+ansible-playbook fromcommandline.yml  --extra-vars "hosts=apacheweb user=test pkg=telnet"
+vim fromcommandline.yml
+ansible-playbook fromcommandline.yml  --extra-vars "hosts=apacheweb user=test pkg=telnet"
+clear
+ls -lart
+ls -l include.yml 
+cd ../include/
+ls -l
+cd ../
+pwd
+cd playbooks/
+ls -lart
+cat local.yml 
+vim localaction.yml
+ansible-playbook localaction.yml 
+vim localaction.yml 
+ansible-playbook localaction.yml 
+vim localaction.yml 
+ansible-playbook localaction.yml 
+ls -l
+vim whencondition.yml 
+cat localaction.yml 
+cat until.yml 
+ls -lart
+cd ../
+ls -lart
+mkdir excercises
+cd excercises/
+ls -lart
+ansible --version
+ansible all --lists-hosts
+history
+history | grep hosts
+ansible a;l; --list-hosts
+ansible all --list-hosts
+ansible odecee3 -m setup filter="ans*ipv4*"
+ansible odecee3 -s -m setup filter="ans*ipv4*"
+ansible apacheweb -s -m setup filter="ans*ipv4*"
+ansible apacheweb -s -m setup -a filter="ans*ipv4*"
+ansible apacheweb -s -m shell -a 'yum list installed | grep lynx'
+ansible apacheweb -s -m shell -a 'tail -n 10 /varlog/messages'
+ansible apacheweb -s -m shell -a 'tail -n 10 /varlog/messages''
+ansible apacheweb -s -m shell -a 'tail -n 10 /varlog/messages'
+ls -l /var/log/messages
+tail -n 10 /var/log/messages
+ansible apacheweb -s -m shell -a 'tail -n 10 /var/log/messages'
+mkdir playbooks
+cd playbooks/
+ls -l
+vim deploy_0103.yml
+ansible-playbook deploy_0103.yml
+vim deploy_0103.yml 
+ansible-playbook deploy_0103.yml
+vim deploy_0103.yml 
+ansible-playbook deploy_0103.yml
+vim deploy_0103.yml 
+ansible-playbook deploy_0103.yml
+tail /var/log/ansible.log 
+vim myfirstplaybook.yml
+ansible-playbook -s myfirstplaybook.yml
+vim myfirstplaybook.yml
+ansible-playbook myfirstplaybook.yml
+ansible all --list-hosts
+ls -l
+pwd
+ls -l ../../
+ls -l ../../playbooks/
+ls -l ../../playbooks/conf/
+pwd
+mkdir conf
+cd conf/
+vim copyright.yml
+vim webdefaults.yml
+cd ../
+ls -l
+vim myfirstplaybook.yml 
+ansible-playbook myfirstplaybook.yml
+vim myfirstplaybook.yml 
+ansible-playbook myfirstplaybook.yml
+vim myfirstplaybook.yml 
+ansible-playbook myfirstplaybook.yml
+ls -l
+cat deploy_0103.yml 
+cd ../
+ls -l
+cd ../
+ls -l
+vim playbooks/
+cd playbooks/
+ls -l
+cat vars.yml 
+cat include.yml 
+vim myfirstplaybook1.yml 
+grep -ril "{{" *
+cat tags.yml 
+cat myfirstplaybookhandler.yml 
+grep -ril "{{" *
+cat prompt.yml 
+ls -lart
+cd ../
+ls -l
+cd excercises/playbooks/
+ls -l
+vim myfirstplaybook.yml 
+ansible-playbook myfirstplaybook.yml
+cat conf/webdefaults.yml 
+vim myfirstplaybook.yml 
+cat conf/webdefaults.yml 
+ansible-playbook myfirstplaybook.yml
+cd ../
+ls -l
+cd ...
+cd ../
+ls -l
+ls -l test/
+cd include/
+ls -l
+cat webstuff.yml 
+cat variables/variables.yml 
+cd ../
+cd playbooks/
+ls -l
+cat vars.yml 
+grep -ril 'vars.yml' *
+cat appserver.yml
+ls 
+pwd
+ll
+vim myfirstplaybook.y
+vim myfirstplaybook1.yml 
+cd ../excercises/playbooks/
+ls -l
+vim myfirstplaybook.yml 
+ansible-playbook myfirstplaybook.yml
+ls -l
+vim conf/webdefaults.yml 
+ansible-playbook myfirstplaybook.yml
+yum list httpd
+vim conf/webdefaults.yml 
+ansible-playbook myfirstplaybook.yml
+vim myfirstplaybook.yml 
+vim conf/webdefaults.yml 
+vim myfirstplaybook.yml 
+ansible-playbook myfirstplaybook.yml
+ls -lart
+vim loop.yml
+cat ../../playbooks/include.yml 
+vim loop.yml
+ansible-playbook loop.yml 
+vim loop.yml
+ansible-playbook loop.yml 
+vim loop.yml
+ansible-playbook loop.yml 
+vim loop.yml
+ansible-playbook loop.yml 
+vim loop.yml
+ansible-playbook loop.yml 
+vim loop.yml
+ansible-playbook loop.yml 
+vim loop.yml
+cp loop.yml notify.yml
+vim notify.yml 
+cat conf/webdefaults.yml 
+vim notify.yml 
+ansible-playbook loop.yml 
+ansible-playbook notify.yml 
+vim notify.yml 
+ansible-playbook notify.yml 
+vim notify.yml 
+ansible-playbook notify.yml 
+vim notify.yml 
+ansible-playbook notify.yml 
+vim notify.yml 
+ansible-playbook notify.yml 
+vim notify.yml 
+ansible-playbook notify.yml 
+vim notify.yml 
+vim whencondition.yml
+vim notify.yml 
+vim whencondition.yml 
+ansible-playbook notify.yml 
+vim whencondition.yml 
+cp notify.yml localaction.yml
+vim lo
+vim localaction.yml 
+ansible-playbook localaction.yml 
+systemctl status httpd
+ps -aux | grep httpd
+ps -ef | grep httpd
+ls -l
+cp localaction.yml runonce.yml
+vim runonce.yml 
+ansible-playbook runonce.yml 
+rm-rf ~/uptime.log 
+rm -rf ~/uptime.log 
+ansible-playbook runonce.yml 
+ls -l
+ls -l /home/test/
+date
+ls -l /home/test/uptime.log 
+cat ~/dir.list 
+vim runonce.yml 
+cp runonce.yml prompt.yml
+vim prompt.yml 
+ls -l
+cp myfirstplaybook.yml prompt.yml
+ls -l
+vim prompt.yml 
+ansible-playbook prompt.yml 
+cd ../
+history | grep git
+git add -A

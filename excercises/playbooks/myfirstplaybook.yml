@@ -1,0 +1,15 @@
+--- #My FIRST PLAYBOOK
+- hosts: apacheweb
+  user: test
+  sudo: yes
+  gather_facts: no
+  vars:
+    playbookversion: 0.1.b
+  vars_files:
+    - conf/copyright.yml
+    - conf/webdefaults.yml
+  tasks:
+    - name: Install apache
+      yum: pkg=httpd-{{ apache_version }} state=installed
+    - name: Quesry if Lynx is installed
+      yum: pkg={{ pkg_lynx}} state=present

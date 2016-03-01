@@ -1,0 +1,11 @@
+--- #LOCAL ACTION DEMO
+- hosts: apacheweb
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Ping appliication before we run our install
+    local_action: command ping -c 4 odecee3
+  - name: Install Lynx on remote server
+    yum: pkg=lynx state=latest

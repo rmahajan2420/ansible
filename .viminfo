@@ -10,18 +10,22 @@
 # Last Search Pattern:
 ~MSle0~/re
 
+# Last Substitute String:
+$
+
 # Command Line History (newest to oldest):
 :wq
 :q
 :w
 :Wq
 :q!
+:WQ
 :wq!
 :1
 
 # Search String History (newest to oldest):
-?/re
 ?/restarted
+?/re
 ?/Start
 ?/HTTPD
 ?/roles
@@ -36,44 +40,96 @@
 
 # Registers:
 "0	LINE	0
-	    - name: Install Apache Appropriate to the Distribution Type
-	      command: apt-get -y install apache2
-	      when: ansible_os_family == "Debian"
+	    - name: Install Apache web server on RedHat Distribution
+	      action: yum name=httpd-{{apache_version }} state=installed
+	      when: ansible_os_family == "RedHAT" 
+	      notify: Restart HTTPD
 "1	LINE	0
-	   
+	       action: service name=httpd state=restarted
 "2	LINE	0
-	    service: name=hhtpd state=started enabled=yes
+	     - name: Restart HTTPD
 "3	LINE	0
-	
+	  handlers:
 "4	LINE	0
-	  - debug: var=timestamp_end 
+	      notify: Restart HTTPD
 "5	LINE	0
-	   raw: /usr/bin/date > /home/test/playbook_end.log
+	      action: yum name=httpd-{{apache_version }} state=installed
 "6	LINE	0
-	    raw: yum list installed> /home/test/installed.log
+	    - name: Install Apache web server
 "7	LINE	0
-	  - name: start the web service
-	    service: name=httpd state=restarted
+	    - name: 
 "8	LINE	0
-	  raw: /usr/bin/date > /home/test/playbook_start.log
+	       
 "9	LINE	0
-	  
+	--- #  service: name=httpd state=started
 ""-	CHAR	0
-	=
+	present
 
 # File marks:
-'0  4  2  ~/include/packages/packages.yml
-'1  5  0  ~/include/packages/packages.yml
-'2  2  15  ~/include/handler/handler.yml
-'3  11  2  ~/include/webstuff.yml
-'4  2  26  ~/include/commands/commands.yml
-'5  1  0  ~/include/commands/commands.yml
-'6  6  2  ~/include/packages/packages.yml
-'7  2  11  ~/include/packages/packages.yml
-'8  1  0  ~/include/variables/variables.yml
-'9  12  12  ~/include/webstuff.yml
+'0  18  40  ~/excercises/playbooks/prompt.yml
+'1  1  0  ~/excercises/playbooks/prompt.yml
+'2  1  96  ~/excercises/playbooks/runonce.yml
+'3  6  18  ~/excercises/playbooks/localaction.yml
+'4  1  0  ~/excercises/playbooks/lo
+'5  11  6  ~/excercises/playbooks/whencondition.yml
+'6  15  21  ~/excercises/playbooks/whencondition.yml
+'7  11  6  ~/excercises/playbooks/notify.yml
+'8  1  0  ~/excercises/playbooks/whencondition.yml
+'9  9  7  ~/excercises/playbooks/notify.yml
 
 # Jumplist (newest first):
+-'  18  40  ~/excercises/playbooks/prompt.yml
+-'  1  0  ~/excercises/playbooks/prompt.yml
+-'  1  96  ~/excercises/playbooks/runonce.yml
+-'  6  18  ~/excercises/playbooks/localaction.yml
+-'  1  0  ~/excercises/playbooks/localaction.yml
+-'  1  0  ~/excercises/playbooks/lo
+-'  11  6  ~/excercises/playbooks/whencondition.yml
+-'  15  6  ~/excercises/playbooks/whencondition.yml
+-'  1  0  ~/excercises/playbooks/whencondition.yml
+-'  11  6  ~/excercises/playbooks/notify.yml
+-'  9  2  ~/excercises/playbooks/notify.yml
+-'  15  7  ~/excercises/playbooks/notify.yml
+-'  12  6  ~/excercises/playbooks/notify.yml
+-'  8  4  ~/excercises/playbooks/notify.yml
+-'  1  0  ~/excercises/playbooks/notify.yml
+-'  9  24  ~/excercises/playbooks/loop.yml
+-'  13  8  ~/excercises/playbooks/loop.yml
+-'  12  8  ~/excercises/playbooks/loop.yml
+-'  6  2  ~/excercises/playbooks/loop.yml
+-'  1  0  ~/excercises/playbooks/loop.yml
+-'  15  27  ~/excercises/playbooks/myfirstplaybook.yml
+-'  3  13  ~/excercises/playbooks/conf/webdefaults.yml
+-'  1  0  ~/excercises/playbooks/conf/webdefaults.yml
+-'  13  6  ~/excercises/playbooks/myfirstplaybook.yml
+-'  2  0  ~/excercises/playbooks/conf/webdefaults.yml
+-'  17  22  ~/playbooks/myfirstplaybook1.yml
+-'  1  0  ~/playbooks/myfirstplaybook1.yml
+-'  1  0  ~/playbooks/myfirstplaybook.y
+-'  8  2  ~/excercises/playbooks/myfirstplaybook.yml
+-'  8  0  ~/playbooks
+-'  10  4  ~/excercises/playbooks/myfirstplaybook.yml
+-'  7  4  ~/excercises/playbooks/myfirstplaybook.yml
+-'  4  2  ~/excercises/playbooks/myfirstplaybook.yml
+-'  2  12  ~/excercises/playbooks/conf/copyright.yml
+-'  1  0  ~/excercises/playbooks/conf/copyright.yml
+-'  2  0  ~/excercises/playbooks/myfirstplaybook.yml
+-'  1  0  ~/excercises/playbooks/myfirstplaybook.yml
+-'  22  16  ~/excercises/playbooks/deploy_0103.yml
+-'  11  4  ~/excercises/playbooks/deploy_0103.yml
+-'  12  0  ~/excercises/playbooks/deploy_0103.yml
+-'  1  0  ~/excercises/playbooks/deploy_0103.yml
+-'  14  11  ~/playbooks/whencondition.yml
+-'  2  0  ~/playbooks/whencondition.yml
+-'  9  35  ~/playbooks/localaction.yml
+-'  11  4  ~/playbooks/localaction.yml
+-'  1  0  ~/playbooks/localaction.yml
+-'  3  15  ~/playbooks/fromcommandline.yml
+-'  8  2  ~/playbooks/fromcommandline.yml
+-'  9  4  ~/playbooks/fromcommandline.yml
+-'  1  0  ~/playbooks/fromcommandline.yml
+-'  16  0  ~/playbooks/startat.yml
+-'  1  0  ~/playbooks/startat.yml
 -'  4  2  ~/include/packages/packages.yml
 -'  5  2  ~/include/packages/packages.yml
 -'  6  0  ~/include/packages/packages.yml
@@ -108,7 +164,6 @@
 -'  10  4  ~/playbooks/until.yml
 -'  13  6  ~/playbooks/until.yml
 -'  1  0  ~/playbooks/until.yml
--'  2  9  ~/playbooks/whencondition.yml
 -'  16  6  ~/playbooks/whencondition.yml
 -'  1  0  ~/playbooks/whencondition.yml
 -'  8  17  ~/playbooks/local.yml
@@ -121,58 +176,184 @@
 -'  8  4  ~/playbooks/runonce.yml
 -'  9  6  ~/playbooks/runonce.yml
 -'  1  0  ~/playbooks/runonce.yml
--'  8  124  ~/playbooks/lookup.yml
--'  1  0  ~/playbooks/lookup.yml
--'  4  28  ~/playbooks/lookup.csv
--'  1  0  ~/playbooks/lookup.csv
--'  20  6  ~/playbooks/myfirstplaybookhandler.yml
--'  1  0  ~/playbooks/myfirstplaybookhandler.yml
--'  4  13  ~/playbooks/conf/webdefaults.yml
--'  1  0  ~/playbooks/conf/webdefaults.yml
--'  19  12  ~/playbooks/myfirstplaybookpoll.yml
--'  1  0  ~/playbooks/myfirstplaybookpoll.yml
--'  2  9  ~/playbooks/myfirstplaybook.yml
--'  18  6  ~/playbooks/myfirstplaybook.yml
--'  17  6  ~/playbooks/myfirstplaybook.yml-orig
--'  19  6  ~/playbooks/myfirstplaybook.yml-orig
--'  28  2  ~/outline/webserver.yml
--'  34  4  ~/outline/webserver.yml
--'  19  2  ~/outline/webserver.yml
--'  21  4  ~/outline/webserver.yml
--'  10  4  ~/outline/webserver.yml-orig
--'  15  4  ~/outline/webserver.yml-orig
--'  12  4  ~/outline/webserver.yml
--'  13  2  ~/outline/webserver.yml-orig
--'  2  0  ~/outline/webserver.yml
--'  3  2  ~/outline/webserver.yml
--'  33  2  ~/outline/webserver.yml
--'  1  0  ~/playbooks/myfirstplaybook.yml-orig
--'  21  6  ~/playbooks/myfirstplaybook.yml
--'  32  0  ~/outline/webserver.yml
--'  27  2  ~/outline/webserver.yml
--'  16  2  ~/outline/webserver.yml
--'  20  2  ~/outline/webserver.yml
--'  1  0  ~/outline/webserver.yml-orig
--'  29  4  ~/outline/webserver.yml
--'  22  2  ~/outline/webserver.yml
--'  1  0  ~/myfirstplaybook.retry
--'  1  0  ~/outline/webserver.yml
--'  18  38  ~/outline/webserver
--'  1  0  ~/outline/webserver
--'  19  2  ~/playbooks/myfirstplaybook.yml
--'  8  4  ~/playbooks/myfirstplaybook.yml
--'  68  0  /etc/vimrc
--'  65  0  /etc/vimrc
--'  1  0  /etc/vimrc
--'  11  4  ~/playbooks/myfirstplaybook.yml
--'  15  4  ~/playbooks/myfirstplaybook.yml
--'  3  0  ~/playbooks/conf/webdefaults.yml
--'  1  2  ~/playbooks/conf/copyright.yml
--'  3  0  ~/playbooks/conf/copyright.yml
--'  6  2  ~/playbooks/myfirstplaybook.yml
--'  1  0  ~/playbooks/myfirstplaybook.yml
 
 # History of marks within files (newest to oldest):
+
+> ~/excercises/playbooks/prompt.yml
+	"	18	40
+	^	18	41
+	.	18	41
+	+	14	20
+	+	19	30
+	+	18	41
+
+> ~/excercises/playbooks/runonce.yml
+	"	1	96
+	^	1	97
+	.	1	96
+	+	2	11
+	+	6	16
+	+	15	0
+	+	14	19
+	+	1	96
+
+> ~/excercises/playbooks/localaction.yml
+	"	6	18
+	^	6	19
+	.	6	18
+	+	1	17
+	+	2	17
+	+	6	18
+
+> ~/excercises/playbooks/lo
+	"	1	0
+
+> ~/excercises/playbooks/whencondition.yml
+	"	11	6
+	^	15	22
+	.	15	21
+	+	20	0
+	+	1	20
+	+	12	12
+	+	13	5
+	+	12	39
+	+	13	0
+	+	10	59
+	+	18	0
+	+	14	53
+	+	16	39
+	+	15	21
+
+> ~/excercises/playbooks/notify.yml
+	"	11	6
+	^	9	8
+	.	8	21
+	+	1	11
+	+	10	27
+	+	11	56
+	+	12	27
+	+	14	7
+	+	15	42
+	+	16	0
+	+	12	8
+	+	12	7
+	+	11	22
+	+	8	19
+	+	12	0
+	+	12	0
+	+	12	0
+	+	13	2
+	+	14	0
+	+	15	22
+	+	8	21
+
+> ~/excercises/playbooks/loop.yml
+	"	9	24
+	^	9	25
+	.	9	24
+	+	6	16
+	+	13	10
+	+	9	34
+	+	8	3
+	+	9	5
+	+	10	5
+	+	11	7
+	+	12	7
+	+	13	7
+	+	9	24
+
+> ~/excercises/playbooks/myfirstplaybook.yml
+	"	15	27
+	^	15	28
+	.	15	27
+	+	2	17
+	+	5	17
+	+	6	13
+	+	16	0
+	+	7	20
+	+	9	24
+	+	10	25
+	+	8	11
+	+	13	21
+	+	15	27
+
+> ~/excercises/playbooks/conf/webdefaults.yml
+	"	3	13
+	^	3	14
+	.	3	13
+	+	1	19
+	+	2	15
+	+	1	35
+	+	3	13
+
+> ~/playbooks/myfirstplaybook1.yml
+	"	17	22
+
+> ~/playbooks/myfirstplaybook.y
+	"	1	0
+
+> ~/excercises/playbooks/conf/copyright.yml
+	"	2	12
+	^	2	13
+	.	2	12
+	+	1	25
+	+	2	12
+
+> ~/excercises/playbooks/deploy_0103.yml
+	"	22	16
+	^	22	17
+	.	22	16
+	+	11	61
+	+	9	24
+	+	10	25
+	+	11	51
+	+	13	17
+	+	19	23
+	+	21	23
+	+	22	16
+
+> ~/playbooks/whencondition.yml
+	"	14	11
+	^	16	35
+	.	15	78
+	+	4	11
+	+	7	38
+	+	8	3
+	+	7	9
+	+	13	41
+	+	15	1
+	+	15	0
+	+	16	17
+	+	17	39
+	+	12	78
+	+	15	78
+
+> ~/playbooks/localaction.yml
+	"	9	35
+	^	9	36
+	.	9	35
+	+	6	18
+	+	11	30
+	+	9	35
+
+> ~/playbooks/fromcommandline.yml
+	"	3	15
+	^	3	16
+	.	3	15
+	+	8	45
+	+	8	32
+	+	10	2
+	+	9	13
+	+	2	21
+	+	3	8
+	+	8	30
+	+	3	15
+
+> ~/playbooks/startat.yml
+	"	16	0
+	^	16	0
+	.	15	21
+	+	15	21
 
 > ~/include/packages/packages.yml
 	"	4	2
@@ -206,208 +387,3 @@
 	+	11	2
 	+	12	2
 	+	13	2
-
-> ~/include/commands/commands.yml
-	"	2	26
-	^	2	41
-	.	2	41
-	+	2	61
-	+	1	45
-	+	2	41
-
-> ~/include/variables/variables.yml
-	"	1	0
-	^	1	16
-	.	1	0
-	+	1	0
-
-> ~/playbooks/failure.yml
-	"	10	17
-	^	10	18
-	.	10	17
-	+	12	31
-	+	8	30
-	+	10	17
-
-> ~/playbooks/tags.yml
-	"	18	21
-	^	18	22
-	.	18	21
-	+	8	48
-	+	12	14
-	+	18	21
-
-> ~/playbooks/plays/packages.yml
-	"	1	21
-	^	1	22
-	.	1	21
-	+	5	0
-	+	1	20
-	+	4	27
-	+	1	21
-
-> ~/playbooks/include.yml
-	"	10	66
-	^	10	67
-	.	10	66
-	+	10	66
-
-> ~/playbooks/prompt.yml
-	"	17	0
-	^	17	0
-	.	16	46
-	+	4	11
-	+	12	21
-	+	16	46
-
-> /tmp/tmpE12Phc
-	"	1	5
-	^	1	6
-	.	1	5
-	+	1	5
-
-> /tmp/tmpr2k2kA
-	"	1	15
-	^	1	16
-	.	1	15
-	+	1	15
-
-> ~/playbooks/accounts.yml
-	"	4	18
-	^	4	19
-	.	4	18
-	+	4	18
-
-> ~/playbooks/myfirstplaybookhandler.yml
-	"	23	6
-	^	20	34
-	.	20	33
-	+	20	52
-	+	13	19
-	+	14	34
-	+	20	33
-
-> ~/playbooks/until.yml
-	"	10	4
-	^	10	11
-	.	10	10
-	+	1	26
-	+	2	18
-	+	9	4
-	+	8	5
-	+	16	22
-	+	10	10
-
-> ~/playbooks/whencondition.yml
-	"	2	9
-	^	16	35
-	.	15	78
-	+	4	11
-	+	7	38
-	+	8	3
-	+	7	9
-	+	13	41
-	+	15	1
-	+	15	0
-	+	16	17
-	+	17	39
-	+	12	78
-	+	15	78
-
-> ~/playbooks/local.yml
-	"	8	17
-	^	8	18
-	.	8	17
-	+	9	0
-	+	7	22
-	+	8	17
-
-> ~/playbooks/loop.yml
-	"	13	8
-	^	13	15
-	.	13	14
-	+	6	17
-	+	13	14
-
-> ~/outline/webserver.yml
-	"	15	4
-	^	14	49
-	.	14	48
-	+	1	37
-	+	2	17
-	+	3	12
-	+	4	11
-	+	6	8
-	+	8	0
-	+	7	9
-	+	8	53
-	+	7	53
-	+	10	0
-	+	10	39
-	+	12	31
-	+	16	9
-	+	16	9
-	+	19	20
-	+	20	9
-	+	21	8
-	+	21	27
-	+	22	8
-	+	23	32
-	+	21	12
-	+	23	29
-	+	24	9
-	+	28	52
-	+	28	47
-	+	29	51
-	+	20	40
-	+	22	38
-	+	29	29
-	+	8	26
-	+	9	29
-	+	10	2
-	+	11	1
-	+	10	3
-	+	15	22
-	+	34	38
-	+	16	0
-	+	27	31
-	+	26	23
-	+	28	0
-	+	32	0
-	+	29	26
-	+	32	27
-	+	32	0
-	+	27	8
-	+	25	17
-	+	34	19
-	+	31	0
-	+	32	0
-	+	34	11
-	+	15	31
-	+	33	23
-	+	15	22
-	+	33	20
-	+	15	22
-	+	2	17
-	+	12	31
-	+	34	34
-	+	12	33
-	+	34	31
-	+	12	30
-	+	15	1
-	+	34	38
-	+	15	0
-	+	14	48
-
-> ~/playbooks/runonce.yml
-	"	11	8
-	^	11	9
-	.	11	8
-	+	6	18
-	+	9	54
-	+	12	19
-	+	8	57
-	+	9	33
-	+	11	29
-	+	9	8
-	+	11	8
